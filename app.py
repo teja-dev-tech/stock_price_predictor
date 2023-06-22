@@ -12,8 +12,17 @@ end = '2023-06-10'
 st.title('Stock Price Prediction')
 
 user_input = st.text_input('Enter Stock Ticker ','AAPL')
-df = yf.download(user_input,start, end)
-
+try:
+  df = yf.download(user_input,start, end)
+except:
+  st.subheader('Invalid Stock Ticker')
+  sys.exit("Error message")
+ValueError = df.describe().count()[3]-1
+print(ValueError)
+if ValueError==0:
+  st.subheader('Invalid Stock Ticker')
+  sys.exit("Error message")
+  
 st.subheader('Data from 2013 - 2023')
 st.write(df.describe())
 
