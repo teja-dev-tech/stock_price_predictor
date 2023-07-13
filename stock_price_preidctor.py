@@ -27,10 +27,6 @@ import pandas_datareader as data
 
 # start = '2013-06-10'
 # end = '2023-06-10'
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import yfinance as yf
 start = '2013-06-10'
 end = '2023-06-10'
 ticker = "AAPL"
